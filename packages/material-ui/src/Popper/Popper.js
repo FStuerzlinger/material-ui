@@ -92,6 +92,7 @@ const Popper = React.forwardRef(function Popper(props, ref) {
       onCreate: createChainedFunction(handlePopperUpdate, popperOptions.onCreate),
       onUpdate: createChainedFunction(handlePopperUpdate, popperOptions.onUpdate),
     });
+    popperRef.current.scheduleUpdate();
   }, [anchorEl, disablePortal, modifiers, open, placement, placementProps, popperOptions]);
 
   const handleEnter = () => {
